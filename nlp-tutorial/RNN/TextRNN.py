@@ -121,6 +121,7 @@ class biRNN(nn.Module):
             input_data = hidden_states[-1].transpose(0, 1)
 
         hidden_states = torch.cat(hidden_states, dim=0)
+        # 取最后一个时间步的输出作为最终输出
         return hidden_states[:, -1, :], h0
 
 
